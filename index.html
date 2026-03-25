@@ -679,7 +679,11 @@
   <section id="hero">
     <div class="hero-inner">
       <div style="margin-bottom:1.5rem;">
-        <img src="Perplexity.png" alt="Kabir Kundapur Sheik" style="width:130px;height:130px;border-radius:50%;object-fit:cover;object-position:center top;border:3px solid var(--teal);box-shadow:0 0 0 6px rgba(0,180,166,0.12);" />
+        <img src="Perplexity.png" alt="Kabir Kundapur Sheik" onclick="document.getElementById('photo-modal').style.display='flex'" style="width:130px;height:130px;border-radius:50%;object-fit:cover;object-position:center top;border:3px solid var(--teal);box-shadow:0 0 0 6px rgba(0,180,166,0.12);cursor:pointer;transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" />
+      </div>
+
+      <div id="photo-modal" onclick="this.style.display='none'" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.85);z-index:999;align-items:center;justify-content:center;cursor:pointer;">
+        <img src="Perplexity.png" alt="Kabir Kundapur Sheik" style="max-width:480px;max-height:90vh;border-radius:16px;object-fit:cover;object-position:center top;border:3px solid var(--teal);box-shadow:0 0 60px rgba(0,180,166,0.3);" />
       </div>
       <div class="hero-tag">Water · Sustainability · LCA</div>
       <h1 class="hero-name">Kabir<br><span>Kundapur Sheik</span></h1>
