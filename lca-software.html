@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>iMpact.LCA | Kabir Kundapur Sheik</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:#0a1628;color:#fff;font-family:'Inter',sans-serif;line-height:1.6}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,22,40,0.96);backdrop-filter:blur(10px);border-bottom:1px solid #1a3050;display:flex;align-items:center;justify-content:space-between;padding:0 2rem;height:60px}
+.nav-logo{color:#00b4a6;font-size:1.4rem;font-weight:700;text-decoration:none;letter-spacing:2px}
+.nav-back{color:#a0b8cc;text-decoration:none;font-size:0.9rem;transition:color .2s}
+.nav-back:hover{color:#00b4a6}
+main{max-width:860px;margin:0 auto;padding:100px 1.5rem 4rem}
+.hero{margin-bottom:3rem}
+.category-pill{display:inline-block;background:rgba(240,165,0,.15);color:#f0a500;border:1px solid rgba(240,165,0,.4);border-radius:20px;padding:.25rem .9rem;font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:1rem}
+.hero h1{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;line-height:1.2;margin-bottom:.75rem}
+.hero .subtitle{color:#a0b0c5;font-size:1rem;margin-bottom:2rem;line-height:1.6}
+.meta-table{width:100%;border-collapse:collapse;background:#162947;border-radius:8px;overflow:hidden}
+.meta-table tr{border-bottom:1px solid #1e3a5f}
+.meta-table tr:last-child{border-bottom:none}
+.meta-table td{padding:.6rem 1rem;font-size:.875rem}
+.meta-table td:first-child{color:#00b4a6;font-weight:600;border-left:3px solid #00b4a6;width:35%;white-space:nowrap}
+.meta-table td:last-child{color:#d0dde8}
+.section{margin-bottom:2.5rem}
+.section h2{font-size:1.3rem;font-weight:700;color:#fff;border-bottom:2px solid #00b4a6;padding-bottom:.4rem;margin-bottom:1.25rem}
+.section p{color:#c8d8e8;margin-bottom:1rem;font-size:.95rem}
+ul.project-list{list-style:none;padding:0}
+ul.project-list li{color:#c8d8e8;font-size:.95rem;padding:.35rem 0 .35rem 1.5rem;position:relative}
+ul.project-list li::before{content:'▸';color:#00b4a6;position:absolute;left:0}
+.img-caption{color:#6080a0;font-size:.8rem;font-style:italic;margin-top:.25rem;margin-bottom:1rem}
+footer{text-align:center;color:#4a6080;font-size:.8rem;padding:2rem 1rem;border-top:1px solid #1a3050;margin-top:2rem}
+@media(max-width:600px){nav{padding:0 1rem}main{padding:80px 1rem 3rem}.meta-table td:first-child{width:42%;white-space:normal}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">KKS</a>
+  <a href="index.html" class="nav-back">← Back to Portfolio</a>
+</nav>
+<main>
+  <div class="hero">
+    <div class="category-pill">LCA Software</div>
+    <h1>iMpact.LCA</h1>
+    <p class="subtitle">Open-source Life Cycle Assessment software — ISO 14040/44 compliant, built for everyone</p>
+    <table class="meta-table">
+      <tr><td>Type</td><td>Web-based Desktop Application</td></tr>
+      <tr><td>Stack</td><td>Python, Streamlit</td></tr>
+      <tr><td>Status</td><td>Active Development — Core modules functional</td></tr>
+      <tr><td>LCI Database</td><td>4,277 real LCI processes</td></tr>
+      <tr><td>Impact Categories</td><td>GWP, Energy, Water, Land, Acidification, Eutrophication</td></tr>
+      <tr><td>Goal</td><td>Free, accessible LCA for SMEs, startups, and students</td></tr>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>Overview</h2>
+    <p>Life Cycle Assessment is no longer optional — the EU's CSRD and ESRS standards are making environmental impact reporting a legal requirement for businesses of all sizes. Yet today, professional LCA software costs thousands of euros per year, putting it out of reach for most SMEs, startups, researchers, and students. iMpact.LCA was built to change that.</p>
+    <p>iMpact.LCA is a web-based LCA application built in Python and Streamlit that guides users through the complete ISO 14040/14044 workflow — from Goal and Scope Definition, through Inventory Analysis with 4,277 real LCI processes, to Impact Assessment across six environmental categories, and professional report generation. It is designed to feel familiar to users of commercial LCA tools while being completely free and intuitive for anyone building a product.</p>
+    <img src="images/impactlca.jpg" alt="iMpact.LCA interface" style="width:100%;border-radius:8px;margin:1.5rem 0;">
+    <p class="img-caption">iMpact.LCA Inventory module — GWP calculation for a bicycle product showing 50.17 kg CO₂-eq per unit across 4,277 LCI processes</p>
+  </div>
+
+  <div class="section">
+    <h2>Key Features</h2>
+    <ul class="project-list">
+      <li>Project management — create and manage multiple LCA projects with full product comparison across projects</li>
+      <li>Inventory module — 4,277 real LCI processes covering materials, energy, transport, and manufacturing</li>
+      <li>6 impact categories — Global Warming Potential (GWP), Energy Demand, Water Use, Land Use, Acidification, Eutrophication</li>
+      <li>Visualisation — flow diagrams and KPI charts for intuitive result interpretation</li>
+      <li>Export — ISO 14040-compliant PDF reports and Excel export for professional sustainability reporting</li>
+      <li>SimaPro-style UI — dark navy left-navigator interface modelled on industry-standard LCA tools</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Current Status</h2>
+    <p>Core functionality is working and stable — inventory, calculation, visualisation, PDF/Excel export, and project management are fully functional. End-of-life waste scenarios, sensitivity analysis parameters, and deeper impact customisation are in active development. Online deployment is the next major milestone, moving the tool from local to browser-accessible for global users.</p>
+  </div>
+
+  <div class="section">
+    <h2>Why It Matters</h2>
+    <p>CSRD and ESRS compliance will require millions of European businesses to report their product environmental footprint within the next few years. iMpact.LCA gives any business or individual the tools to start that journey today — for free.</p>
+  </div>
+</main>
+<footer>© 2026 Kabir Kundapur Sheik · Built with purpose, not a template.</footer>
+</body>
+</html>

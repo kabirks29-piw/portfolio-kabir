@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FloodSim | Kabir Kundapur Sheik</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:#0a1628;color:#fff;font-family:'Inter',sans-serif;line-height:1.6}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,22,40,0.96);backdrop-filter:blur(10px);border-bottom:1px solid #1a3050;display:flex;align-items:center;justify-content:space-between;padding:0 2rem;height:60px}
+.nav-logo{color:#00b4a6;font-size:1.4rem;font-weight:700;text-decoration:none;letter-spacing:2px}
+.nav-back{color:#a0b8cc;text-decoration:none;font-size:0.9rem;transition:color .2s}
+.nav-back:hover{color:#00b4a6}
+main{max-width:860px;margin:0 auto;padding:100px 1.5rem 4rem}
+.hero{margin-bottom:3rem}
+.category-pill{display:inline-block;background:rgba(240,165,0,.15);color:#f0a500;border:1px solid rgba(240,165,0,.4);border-radius:20px;padding:.25rem .9rem;font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:1rem}
+.hero h1{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;line-height:1.2;margin-bottom:.75rem}
+.hero .subtitle{color:#a0b0c5;font-size:1rem;margin-bottom:2rem;line-height:1.6}
+.meta-table{width:100%;border-collapse:collapse;background:#162947;border-radius:8px;overflow:hidden}
+.meta-table tr{border-bottom:1px solid #1e3a5f}
+.meta-table tr:last-child{border-bottom:none}
+.meta-table td{padding:.6rem 1rem;font-size:.875rem}
+.meta-table td:first-child{color:#00b4a6;font-weight:600;border-left:3px solid #00b4a6;width:35%;white-space:nowrap}
+.meta-table td:last-child{color:#d0dde8}
+.section{margin-bottom:2.5rem}
+.section h2{font-size:1.3rem;font-weight:700;color:#fff;border-bottom:2px solid #00b4a6;padding-bottom:.4rem;margin-bottom:1.25rem}
+.section p{color:#c8d8e8;margin-bottom:1rem;font-size:.95rem}
+ul.project-list{list-style:none;padding:0}
+ul.project-list li{color:#c8d8e8;font-size:.95rem;padding:.35rem 0 .35rem 1.5rem;position:relative}
+ul.project-list li::before{content:'▸';color:#00b4a6;position:absolute;left:0}
+.img-caption{color:#6080a0;font-size:.8rem;font-style:italic;margin-top:.25rem;margin-bottom:1rem}
+footer{text-align:center;color:#4a6080;font-size:.8rem;padding:2rem 1rem;border-top:1px solid #1a3050;margin-top:2rem}
+@media(max-width:600px){nav{padding:0 1rem}main{padding:80px 1rem 3rem}.meta-table td:first-child{width:42%;white-space:normal}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">KKS</a>
+  <a href="index.html" class="nav-back">← Back to Portfolio</a>
+</nav>
+<main>
+  <div class="hero">
+    <div class="category-pill">Hydraulic Modelling &amp; GIS</div>
+    <h1>FloodSim</h1>
+    <p class="subtitle">Dam breach flood inundation simulation and visualisation for disaster risk management in Karnataka, India</p>
+    <table class="meta-table">
+      <tr><td>Type</td><td>Web-based Desktop Application</td></tr>
+      <tr><td>Stack</td><td>Python, Streamlit</td></tr>
+      <tr><td>Status</td><td>Active Development — Core simulation functional</td></tr>
+      <tr><td>Study Area</td><td>KRS Dam (Krishna Raja Sagara), Kaveri River, Mysuru, India</td></tr>
+      <tr><td>Terrain Data</td><td>SRTM 30m DEM (real data)</td></tr>
+      <tr><td>Export</td><td>Google Earth KMZ for 3D visualisation</td></tr>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>Overview</h2>
+    <p>Millions of people live downstream of major dams with no accessible way to understand their flood risk. The tools that model dam breach scenarios exist — but they are locked inside expensive engineering software used only by specialists. FloodSim was built to change that.</p>
+    <p>FloodSim is a desktop web application that simulates the maximum flood inundation extent of a dam breach scenario for the Krishna Raja Sagara (KRS) Dam on the Kaveri River, Mysuru, India. It fetches real SRTM 30m terrain data, computes flood extent using a bathtub inundation model based on reservoir volume and terrain connectivity, and visualises the affected area as an interactive map with water depth overlays — exportable directly to Google Earth as a KMZ file for 3D visualisation and emergency planning.</p>
+    <p>The immediate purpose is public awareness: to show which villages, towns, and infrastructure would be inundated if a dam fails, giving local governments and NGOs visual evidence for emergency preparedness planning. The long-term vision is to scale this to cover all major dams older than 50 years — starting in Karnataka and eventually globally — democratising flood risk information that is currently inaccessible to the communities who need it most.</p>
+    <img src="images/floodsim.jpg" alt="FloodSim interface" style="width:100%;border-radius:8px;margin:1.5rem 0;">
+    <p class="img-caption">FloodSim simulation of KRS Dam breach — 129.2 km² flooded area, 61.0 m max water depth, 15,950 cells inundated</p>
+  </div>
+
+  <div class="section">
+    <h2>Key Features</h2>
+    <ul class="project-list">
+      <li>Real terrain data — fetches SRTM 30m DEM automatically for the KRS Dam region</li>
+      <li>Bathtub inundation model — computes maximum flood extent based on reservoir volume and terrain connectivity</li>
+      <li>Interactive map — water depth overlay with colour-coded inundation zones</li>
+      <li>Impact metrics — flooded area (km²), max water depth (m), average water depth (m), cells inundated</li>
+      <li>Google Earth export — KMZ file for 3D visualisation and field planning</li>
+      <li>Dam info panel — reservoir capacity, dam height, coordinates, river and district data</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Current Status &amp; Roadmap</h2>
+    <p>Core simulation, terrain visualisation, impact metrics, and Google Earth export are fully functional. The current model uses a simplified bathtub inundation approach — temporal flood progression modelling using full 2D Saint-Venant equations is planned for v2.0. Future development includes expanded DEM coverage downstream toward Mandya, population impact data, infrastructure at risk mapping, AI-assisted evacuation route planning, and multi-dam support across Karnataka.</p>
+  </div>
+</main>
+<footer>© 2026 Kabir Kundapur Sheik · Built with purpose, not a template.</footer>
+</body>
+</html>
