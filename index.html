@@ -1,186 +1,1025 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kabir Kundapur Sheik — Portfolio</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body{background:#0a1628;color:#fff;font-family:'Inter',sans-serif;line-height:1.6}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kabir Kundapur Sheik — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,22,40,0.96);backdrop-filter:blur(10px);border-bottom:1px solid #1a3050;display:flex;align-items:center;justify-content:space-between;padding:0 2rem;height:60px}
-.nav-logo{color:#00b4a6;font-size:1.4rem;font-weight:700;text-decoration:none;letter-spacing:2px}
-.nav-links{display:flex;gap:1.5rem;list-style:none}
-.nav-links a{color:#a0b8cc;text-decoration:none;font-size:.9rem;transition:color .2s}
-.nav-links a:hover{color:#00b4a6}
+    :root {
+      --navy: #0a1628;
+      --navy-mid: #0f2040;
+      --navy-light: #162947;
+      --teal: #00b4a6;
+      --teal-dim: rgba(0, 180, 166, 0.15);
+      --gold: #f0a500;
+      --gold-dim: rgba(240, 165, 0, 0.15);
+      --white: #ffffff;
+      --gray: #94a3b8;
+      --gray-light: #cbd5e1;
+      --border: rgba(255, 255, 255, 0.07);
+    }
 
-/* HERO */
-.hero-section{max-width:900px;margin:0 auto;padding:130px 1.5rem 4rem;text-align:center}
-.hero-section .eyebrow{color:#00b4a6;font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:2px;margin-bottom:1rem}
-.hero-section h1{font-size:clamp(2.2rem,5vw,3.8rem);font-weight:700;line-height:1.15;margin-bottom:1rem}
-.hero-section h1 span{color:#f0a500}
-.hero-section .tagline{color:#a0b0c5;font-size:1.05rem;max-width:560px;margin:0 auto 2rem}
-.hero-badges{display:flex;flex-wrap:wrap;justify-content:center;gap:.6rem;margin-bottom:3rem}
-.badge{background:#162947;border:1px solid #1e3a5f;color:#a0c0d8;font-size:.75rem;padding:.3rem .8rem;border-radius:20px}
-.badge span{color:#00b4a6;font-weight:600}
+    html { scroll-behavior: smooth; }
 
-/* SECTION HEADINGS */
-.section-wrap{max-width:900px;margin:0 auto;padding:0 1.5rem 5rem}
-.section-title{font-size:1.6rem;font-weight:700;color:#fff;margin-bottom:.4rem}
-.section-line{width:48px;height:3px;background:#00b4a6;border-radius:2px;margin-bottom:2rem}
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--navy);
+      color: var(--white);
+      line-height: 1.7;
+      font-size: 16px;
+    }
 
-/* PROJECT CARDS GRID */
-.projects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.5rem}
-.card{background:#0f1e35;border:1px solid #1a3050;border-radius:12px;padding:1.5rem;display:flex;flex-direction:column;transition:border-color .25s,transform .25s;position:relative;overflow:hidden}
-.card::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:#00b4a6;opacity:0;transition:opacity .25s}
-.card:hover{border-color:#00b4a6;transform:translateY(-3px)}
-.card:hover::before{opacity:1}
-.card-pill{display:inline-block;font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.8px;color:#f0a500;background:rgba(240,165,0,.1);border:1px solid rgba(240,165,0,.3);border-radius:12px;padding:.2rem .7rem;margin-bottom:.9rem;align-self:flex-start}
-.card h3{font-size:1rem;font-weight:600;color:#fff;margin-bottom:.5rem;line-height:1.4}
-.card p{color:#7a96b0;font-size:.82rem;line-height:1.55;flex:1}
-.read-more{color:#00b4a6;border:1px solid #00b4a6;background:transparent;padding:.4rem 1rem;border-radius:6px;font-size:.8rem;text-decoration:none;display:inline-block;margin-top:.75rem;transition:background .2s,color .2s;font-family:'Inter',sans-serif;cursor:pointer}
-.read-more:hover{background:#00b4a6;color:#0a1628}
+    /* ── SCROLLBAR ── */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--navy); }
+    ::-webkit-scrollbar-thumb { background: var(--teal); border-radius: 3px; }
 
-/* ABOUT */
-.about-section{max-width:900px;margin:0 auto;padding:0 1.5rem 5rem}
-.about-card{background:#0f1e35;border:1px solid #1a3050;border-radius:12px;padding:2rem}
-.about-card h2{font-size:1.4rem;font-weight:700;margin-bottom:1rem}
-.about-card p{color:#a0b8cc;font-size:.95rem;margin-bottom:.8rem}
-.skills-grid{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem}
-.skill-tag{background:#162947;border:1px solid #1e3a5f;color:#7ab8cc;font-size:.75rem;padding:.25rem .7rem;border-radius:6px}
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(10, 22, 40, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-/* FOOTER */
-footer{text-align:center;color:#4a6080;font-size:.8rem;padding:2rem 1rem;border-top:1px solid #1a3050}
+    .nav-logo {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--teal);
+      letter-spacing: 0.05em;
+      text-decoration: none;
+    }
 
-@media(max-width:640px){
-  nav{padding:0 1rem}
-  .hero-section{padding:100px 1rem 3rem}
-  .projects-grid{grid-template-columns:1fr}
-  .section-wrap,.about-section{padding-left:1rem;padding-right:1rem}
-}
-</style>
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--gray-light);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--teal); }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 6rem 2rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #hero::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 800px;
+      height: 800px;
+      background: radial-gradient(ellipse, rgba(0, 180, 166, 0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-inner { position: relative; max-width: 760px; }
+
+    .hero-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--teal);
+      border: 1px solid var(--teal);
+      border-radius: 100px;
+      padding: 0.3rem 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-name {
+      font-size: clamp(2.4rem, 6vw, 4rem);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+
+    .hero-name span { color: var(--teal); }
+
+    .hero-title {
+      font-size: clamp(1rem, 2.5vw, 1.3rem);
+      font-weight: 500;
+      color: var(--gold);
+      margin-bottom: 0.6rem;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(0.9rem, 2vw, 1.05rem);
+      color: var(--gray);
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-location {
+      font-size: 0.85rem;
+      color: var(--gray);
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-location svg {
+      width: 14px; height: 14px;
+      vertical-align: middle;
+      margin-right: 4px;
+      fill: var(--teal);
+    }
+
+    .btn-group { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 2rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--teal);
+      color: var(--navy);
+    }
+
+    .btn-primary:hover {
+      background: #00cfc0;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--teal);
+      color: var(--teal);
+      transform: translateY(-2px);
+    }
+
+    /* ── SECTIONS ── */
+    section { padding: 6rem 2rem; }
+
+    .container { max-width: 1100px; margin: 0 auto; }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-heading {
+      font-size: clamp(1.8rem, 4vw, 2.4rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+
+    .section-sub {
+      color: var(--gray);
+      font-size: 1rem;
+      max-width: 600px;
+      margin-bottom: 3rem;
+    }
+
+    .divider {
+      width: 48px;
+      height: 3px;
+      background: var(--teal);
+      border-radius: 2px;
+      margin-bottom: 1rem;
+    }
+
+    /* ── ABOUT ── */
+    #about { background: var(--navy-mid); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .about-text p {
+      color: var(--gray-light);
+      margin-bottom: 1.2rem;
+      font-size: 0.975rem;
+      line-height: 1.85;
+    }
+
+    .about-right {}
+
+    .about-block-title {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 1rem;
+    }
+
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .skill-tag {
+      background: var(--teal-dim);
+      color: var(--teal);
+      border: 1px solid rgba(0, 180, 166, 0.25);
+      font-size: 0.78rem;
+      font-weight: 500;
+      padding: 0.3rem 0.75rem;
+      border-radius: 6px;
+    }
+
+    .lang-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .lang-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.875rem;
+      color: var(--gray-light);
+    }
+
+    .lang-badge {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--gold);
+      background: var(--gold-dim);
+      border: 1px solid rgba(240, 165, 0, 0.2);
+      padding: 0.15rem 0.55rem;
+      border-radius: 4px;
+    }
+
+    /* ── CARDS ── */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: var(--navy-light);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .card:hover {
+      border-color: rgba(0, 180, 166, 0.35);
+      transform: translateY(-3px);
+    }
+
+    .card-tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: var(--gold-dim);
+      border: 1px solid rgba(240, 165, 0, 0.2);
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      margin-bottom: 0.75rem;
+    }
+
+    .card-title {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+      line-height: 1.4;
+      color: var(--white);
+    }
+
+    .card-desc {
+      font-size: 0.85rem;
+      color: var(--gray);
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+
+    .tool-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+
+    .tool-tag {
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: var(--teal);
+      background: var(--teal-dim);
+      border: 1px solid rgba(0, 180, 166, 0.2);
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+    }
+
+    /* ── SOFTWARE ── */
+    #software { background: var(--navy-mid); }
+
+    .software-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .software-card {
+      background: var(--navy-light);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 2rem;
+      transition: border-color 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .software-card:hover {
+      border-color: rgba(0, 180, 166, 0.4);
+      transform: translateY(-4px);
+    }
+
+    .status-badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--teal);
+      background: var(--teal-dim);
+      border: 1px solid rgba(0, 180, 166, 0.3);
+      padding: 0.25rem 0.7rem;
+      border-radius: 100px;
+      width: fit-content;
+    }
+
+    .software-card h3 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--white);
+    }
+
+    .software-card p {
+      font-size: 0.9rem;
+      color: var(--gray);
+      line-height: 1.75;
+      flex: 1;
+    }
+
+    .software-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .software-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--teal);
+      text-decoration: none;
+      border: 1px solid rgba(0, 180, 166, 0.35);
+      padding: 0.4rem 0.9rem;
+      border-radius: 6px;
+      transition: background 0.2s;
+    }
+
+    .software-link:hover { background: var(--teal-dim); }
+
+    /* ── TIMELINE ── */
+    #experience { background: var(--navy); }
+
+    .timeline {
+      position: relative;
+      padding-left: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0; bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--teal), transparent);
+    }
+
+    .timeline-item {
+      position: relative;
+      padding: 0 0 2.5rem 2rem;
+    }
+
+    .timeline-item:last-child { padding-bottom: 0; }
+
+    .timeline-dot {
+      position: absolute;
+      left: -2.5rem;
+      top: 0.35rem;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      border: 2px solid var(--teal);
+      background: var(--navy);
+    }
+
+    .timeline-dot.education { background: var(--teal); }
+
+    .timeline-date {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--gold);
+      letter-spacing: 0.05em;
+      margin-bottom: 0.3rem;
+    }
+
+    .timeline-type {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-left: 0.6rem;
+      color: var(--gray);
+    }
+
+    .timeline-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.2rem;
+    }
+
+    .timeline-org {
+      font-size: 0.875rem;
+      color: var(--teal);
+      margin-bottom: 0.5rem;
+    }
+
+    .timeline-detail {
+      font-size: 0.835rem;
+      color: var(--gray);
+      line-height: 1.65;
+    }
+
+    /* ── CERTS ── */
+    .certs-heading {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 1rem;
+    }
+
+    .certs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+
+    .cert-card {
+      background: var(--navy-light);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1rem 1.2rem;
+      font-size: 0.85rem;
+      color: var(--gray-light);
+      transition: border-color 0.2s;
+    }
+
+    .cert-card:hover { border-color: rgba(0, 180, 166, 0.3); }
+
+    .cert-date {
+      font-size: 0.72rem;
+      color: var(--gold);
+      font-weight: 600;
+      margin-top: 0.3rem;
+    }
+
+    /* ── CONTACT ── */
+    #contact { background: var(--navy-mid); }
+
+    .contact-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .contact-note {
+      font-size: 0.975rem;
+      color: var(--gray-light);
+      line-height: 1.75;
+      margin-top: 1rem;
+      padding: 1.2rem;
+      background: var(--teal-dim);
+      border-left: 3px solid var(--teal);
+      border-radius: 0 8px 8px 0;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 1.2rem;
+      background: var(--navy-light);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      text-decoration: none;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .contact-item:hover {
+      border-color: rgba(0, 180, 166, 0.4);
+      transform: translateX(4px);
+    }
+
+    .contact-icon {
+      width: 40px; height: 40px;
+      background: var(--teal-dim);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .contact-icon svg {
+      width: 18px; height: 18px;
+      fill: var(--teal);
+    }
+
+    .contact-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--gray);
+    }
+
+    .contact-value {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--white);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy);
+      border-top: 1px solid var(--border);
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.85rem;
+      color: var(--gray);
+    }
+
+    footer span { color: var(--teal); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav { padding: 0 1.2rem; }
+
+      .nav-links { gap: 1.2rem; }
+
+      .nav-links a { font-size: 0.8rem; }
+
+      section { padding: 4rem 1.2rem; }
+
+      .about-grid,
+      .contact-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+
+      .cards-grid,
+      .software-grid { grid-template-columns: 1fr; }
+
+      .timeline { padding-left: 1.5rem; }
+
+      .timeline-item { padding-left: 1.5rem; }
+
+      .timeline-dot { left: -2rem; }
+    }
+
+    @media (max-width: 480px) {
+      .nav-links { display: none; }
+
+      .hero-name { font-size: 2rem; }
+    }
+  </style>
 </head>
 <body>
 
-<nav>
-  <a href="index.html" class="nav-logo">KKS</a>
-  <ul class="nav-links">
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#about">About</a></li>
-  </ul>
-</nav>
+  <!-- ── NAV ── -->
+  <nav>
+    <a href="#hero" class="nav-logo">KKS</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#software">Software</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-<!-- HERO -->
-<section class="hero-section">
-  <p class="eyebrow">M.Sc. Water Resources &amp; Environmental Management</p>
-  <h1>Kabir <span>Kundapur Sheik</span></h1>
-  <p class="tagline">Environmental engineer bridging hydrology, circular economy, and sustainability — trained at Leibniz Universität Hannover.</p>
-  <div class="hero-badges">
-    <span class="badge"><span>Location</span> Hannover, Germany</span>
-    <span class="badge"><span>Programme</span> WATENV — Leibniz Universität Hannover</span>
-    <span class="badge"><span>Focus</span> Hydrology · LCA · Circular Economy · WWTP</span>
-  </div>
-</section>
-
-<!-- PROJECTS -->
-<section class="section-wrap" id="projects">
-  <h2 class="section-title">Project Portfolio</h2>
-  <div class="section-line"></div>
-  <div class="projects-grid">
-
-    <!-- Card 1: LCA PV -->
-    <div class="card">
-      <span class="card-pill">LCA &amp; Sustainability</span>
-      <h3>LCA Framework for Photovoltaic Systems</h3>
-      <p>Qualitative framework for executing ISO 14040/14044-compliant Life Cycle Assessments for PV systems. STAN2 &amp; Umberto modelling; reviewed 117 existing LCA studies.</p>
-      <a href="lca-pv.html" class="read-more">Read More →</a>
+  <!-- ── HERO ── -->
+  <section id="hero">
+    <div class="hero-inner">
+      <div style="margin-bottom:1.5rem;">
+        <img src="Perplexity.png" alt="Kabir Kundapur Sheik" style="width:130px;height:130px;border-radius:50%;object-fit:cover;object-position:center top;border:3px solid var(--teal);box-shadow:0 0 0 6px rgba(0,180,166,0.12);" />
+      </div>
+      <div class="hero-tag">Water · Sustainability · LCA</div>
+      <h1 class="hero-name">Kabir<br><span>Kundapur Sheik</span></h1>
+      <p class="hero-title">M.Sc. Water Resources &amp; Environmental Management</p>
+      <p class="hero-subtitle">Sustainability Analyst &nbsp;·&nbsp; LCA Practitioner &nbsp;·&nbsp; Water Engineer</p>
+      <p class="hero-location">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+        Leibniz Universität Hannover, Germany
+      </p>
+      <div class="btn-group">
+        <a href="#projects" class="btn btn-primary">View My Work</a>
+        <a href="https://www.linkedin.com/in/kabirkundapursheik/" target="_blank" rel="noopener" class="btn btn-outline">LinkedIn</a>
+      </div>
     </div>
+  </section>
 
-    <!-- Card 2: Weser -->
-    <div class="card">
-      <span class="card-pill">Hydrology</span>
-      <h3>DWD Seasonal Ensemble Forecast — Weser River Basin</h3>
-      <p>Evaluated DWD ICON-ALO ensemble forecast skill for the 2023/24 Weser floods. 95th percentile signalled the December flood event 7 months in advance at Lead-6.</p>
-      <a href="weser.html" class="read-more">Read More →</a>
+  <!-- ── ABOUT ── -->
+  <section id="about">
+    <div class="container">
+      <p class="section-label">Background</p>
+      <div class="divider"></div>
+      <h2 class="section-heading">About Me</h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>M.Sc. student in Water Resources and Environmental Management at Leibniz Universität Hannover, with industry experience spanning water supply engineering, sustainable infrastructure, and construction management in India.</p>
+          <p>Currently focused on Life Cycle Assessment, circular economy, and hydrological modelling — bridging rigorous academic research with real-world engineering practice, and applying business thinking to sustainability challenges through startup ideation and project management.</p>
+          <p>Building two open-source software tools: <strong style="color:var(--teal)">iMpact.LCA</strong> — a desktop LCA application — and <strong style="color:var(--teal)">FloodSim</strong> — a dam break flood simulation tool for disaster risk management in India.</p>
+        </div>
+        <div class="about-right">
+          <p class="about-block-title">Technical Skills</p>
+          <div class="skills-grid">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">ArcGIS Pro</span>
+            <span class="skill-tag">SIMBA</span>
+            <span class="skill-tag">HBV-IWW</span>
+            <span class="skill-tag">OneClick LCA</span>
+            <span class="skill-tag">STAN Modelling</span>
+            <span class="skill-tag">Umberto</span>
+            <span class="skill-tag">AutoCAD Civil 3D</span>
+            <span class="skill-tag">Power BI</span>
+            <span class="skill-tag">Excel / Word / PowerPoint</span>
+            <span class="skill-tag">R</span>
+            <span class="skill-tag">AI-assisted Scripting</span>
+            <span class="skill-tag">SimaPro</span>
+          </div>
+          <p class="about-block-title">Languages</p>
+          <div class="lang-list">
+            <div class="lang-item"><span>English</span><span class="lang-badge">C1</span></div>
+            <div class="lang-item"><span>Deutsch</span><span class="lang-badge">B2</span></div>
+            <div class="lang-item"><span>Hindi</span><span class="lang-badge">Native</span></div>
+            <div class="lang-item"><span>Kannada</span><span class="lang-badge">Mother tongue</span></div>
+            <div class="lang-item"><span>Telugu</span><span class="lang-badge">Native</span></div>
+          </div>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <!-- Card 3: Re-Union -->
-    <div class="card">
-      <span class="card-pill">Circular Economy</span>
-      <h3>Re-Union — Circular Uniform Startup</h3>
-      <p>1st place university startup: B2B uniform rental, repair &amp; recycling for corporate India. Fully circular 100% PET loop at €5.14/employee/month with 33% gross margin.</p>
-      <a href="reunion.html" class="read-more">Read More →</a>
+  <!-- ── PROJECTS ── -->
+  <section id="projects">
+    <div class="container">
+      <p class="section-label">Research &amp; Coursework</p>
+      <div class="divider"></div>
+      <h2 class="section-heading">Academic Projects</h2>
+      <p class="section-sub">Research and coursework from M.Sc. WATENV at Leibniz Universität Hannover</p>
+      <div class="cards-grid">
+
+        <div class="card">
+          <span class="card-tag">Hydrology</span>
+          <h3 class="card-title">DWD Seasonal Ensemble Forecast — Weser River Basin</h3>
+          <p class="card-desc">Evaluated DWD's 50-member seasonal ensemble forecasts for predicting the major 2023/24 flooding in the Weser River Basin, Northern Germany. Assessed forecast skill using Pbias, RMSE, and Correlation Coefficients. Found that 95th percentile ensemble members provided early warning up to 7 months in advance.</p>
+          <div class="tool-tags">
+            <span class="tool-tag">Python</span>
+            <span class="tool-tag">GeoPandas</span>
+            <span class="tool-tag">Matplotlib</span>
+            <span class="tool-tag">Shapely</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="card-tag">Hydrology</span>
+          <h3 class="card-title">Hydrological Modelling — Hahle Catchment</h3>
+          <p class="card-desc">Semi-distributed rainfall-runoff modelling of the Hahle catchment in Lower Saxony using ArcGIS Pro for delineation and the HBV-IWW model for simulation. Included flood frequency statistics using GEV and Gumbel distributions with L-Moments, sensitivity analysis, calibration and validation.</p>
+          <div class="tool-tags">
+            <span class="tool-tag">ArcGIS Pro</span>
+            <span class="tool-tag">HBV-IWW</span>
+            <span class="tool-tag">Python</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="card-tag">LCA &amp; Sustainability</span>
+          <h3 class="card-title">LCA Framework for Photovoltaic Systems</h3>
+          <p class="card-desc">Developed a qualitative LCA framework for PV systems following ISO 14040/14044, covering all four LCA phases. Compared crystalline silicon vs thin-film technologies across material utilisation, energy consumption, and emissions. Reviewed 10+ existing LCA studies.</p>
+          <div class="tool-tags">
+            <span class="tool-tag">ISO 14040/14044</span>
+            <span class="tool-tag">OneClick LCA</span>
+            <span class="tool-tag">Literature Review</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="card-tag">Circular Economy</span>
+          <h3 class="card-title">Re-Union — Circular Uniform Startup</h3>
+          <p class="card-desc">Designed a uniform-as-a-service rental and recycling startup targeting Indian manufacturing companies. Developed full business model canvas, unit economics (€5.14/employee/month), and circular material flow strategy using 100% recyclable polyester. Won 1st place at the IGCS-motan university competition.</p>
+          <div class="tool-tags">
+            <span class="tool-tag">Business Model Canvas</span>
+            <span class="tool-tag">STAN</span>
+            <span class="tool-tag">Market Analysis</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="card-tag">Wastewater</span>
+          <h3 class="card-title">Lummerwald WWTP — Static &amp; Dynamic Simulation</h3>
+          <p class="card-desc">Simulated a biological wastewater treatment plant using SIMBA software. Compared three process configurations (existing, modified, step-feed cascade) across winter, spring, and summer temperatures. Included PI controller design, aeration optimisation, and economic analysis.</p>
+          <div class="tool-tags">
+            <span class="tool-tag">SIMBA</span>
+            <span class="tool-tag">ASM Modelling</span>
+            <span class="tool-tag">PI Controller Design</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="card-tag">Circular Economy</span>
+          <h3 class="card-title">Ceramsite Recovery from Dewatered Sludge</h3>
+          <p class="card-desc">Investigated feasibility of producing ceramsite lightweight aggregate from municipal sewage sludge and MSWI fly ash via rotary kiln sintering. Included STAN material flow modelling, cost analysis comparing ceramsite vs biogas production units, and environmental assessment.</p>
+          <div class="tool-tags">
+            <span class="tool-tag">STAN</span>
+            <span class="tool-tag">Cost Analysis</span>
+            <span class="tool-tag">Material Flow Analysis</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="card-tag">Water Resources</span>
+          <h3 class="card-title">Guarani Aquifer System — Transboundary Management</h3>
+          <p class="card-desc">Analysed the governance and management of the Guarani Aquifer System, one of the world's largest transboundary aquifers spanning Argentina, Brazil, Paraguay, and Uruguay. Examined the PSAG project structure, GEF/World Bank funding mechanisms, and international water law principles.</p>
+          <div class="tool-tags">
+            <span class="tool-tag">Literature Review</span>
+            <span class="tool-tag">GIS</span>
+            <span class="tool-tag">Policy Analysis</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="card-tag">Circular Economy</span>
+          <h3 class="card-title">HDPE Recycling in the Circular Economy</h3>
+          <p class="card-desc">Examined HDPE supply chains, NIR sorting, mechanical and chemical recycling pathways, and circular economy strategies for plastic pipes and packaging within the European context.</p>
+          <div class="tool-tags">
+            <span class="tool-tag">Material Flow Analysis</span>
+            <span class="tool-tag">Literature Review</span>
+          </div>
+        </div>
+
+      </div>
     </div>
+  </section>
 
-    <!-- Card 4: Hahle -->
-    <div class="card">
-      <span class="card-pill">Hydrology</span>
-      <h3>Hydrological Modelling — Hahle Catchment</h3>
-      <p>Semi-distributed HBV-IWW rainfall-runoff modelling, flood frequency analysis (GEV &amp; Gumbel), and sensitivity calibration for a 153 km² German catchment.</p>
-      <a href="hahle.html" class="read-more">Read More →</a>
+  <!-- ── SOFTWARE ── -->
+  <section id="software">
+    <div class="container">
+      <p class="section-label">Open Source</p>
+      <div class="divider"></div>
+      <h2 class="section-heading">Software Projects</h2>
+      <p class="section-sub">Open-source tools currently in development</p>
+      <div class="software-grid">
+
+        <div class="software-card">
+          <span class="status-badge">In Development</span>
+          <h3>iMpact.LCA</h3>
+          <p>A desktop Life Cycle Assessment application built in Python and Streamlit. Features a SimaPro-style dark navy interface, master database of LCA processes from multiple sources, and an enhanced PDF reporting system supporting cross-project product comparison.</p>
+          <div class="tool-tags" style="flex-wrap:wrap;display:flex;gap:0.35rem;">
+            <span class="tool-tag">Python</span>
+            <span class="tool-tag">Streamlit</span>
+            <span class="tool-tag">LCA</span>
+            <span class="tool-tag">PDF Reporting</span>
+          </div>
+          <div class="software-footer">
+            <a href="#" class="software-link">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+
+        <div class="software-card">
+          <span class="status-badge">In Development</span>
+          <h3>FloodSim</h3>
+          <p>A dam break flood simulation and visualisation application built in Python and Streamlit, focused on Karnataka, India. Designed to model and visualise flood inundation scenarios for disaster risk management.</p>
+          <div class="tool-tags" style="flex-wrap:wrap;display:flex;gap:0.35rem;">
+            <span class="tool-tag">Python</span>
+            <span class="tool-tag">Streamlit</span>
+            <span class="tool-tag">Hydraulic Modelling</span>
+            <span class="tool-tag">GIS Visualisation</span>
+          </div>
+          <div class="software-footer">
+            <a href="#" class="software-link">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+
+      </div>
     </div>
+  </section>
 
-    <!-- Card 5: Ceramsite -->
-    <div class="card">
-      <span class="card-pill">Waste Valorisation</span>
-      <h3>Ceramsite Recovery from Dewatered Sludge</h3>
-      <p>Techno-economic feasibility of rotary kiln sintering of municipal sludge + MSWI fly ash to produce ceramsite aggregate. Benchmarked vs. biogas production using STAN mass flow analysis.</p>
-      <a href="ceramsite.html" class="read-more">Read More →</a>
+  <!-- ── EXPERIENCE ── -->
+  <section id="experience">
+    <div class="container">
+      <p class="section-label">Career &amp; Education</p>
+      <div class="divider"></div>
+      <h2 class="section-heading">Experience &amp; Education</h2>
+      <p class="section-sub" style="margin-bottom:2.5rem;">A decade of engineering practice and graduate research</p>
+
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-dot education"></div>
+          <div class="timeline-date">Oct 2022 – Dec 2026 <span class="timeline-type">Education</span></div>
+          <div class="timeline-title">M.Sc. Water Resources and Environmental Management</div>
+          <div class="timeline-org">Leibniz Universität Hannover, Germany</div>
+          <div class="timeline-detail">Recycling &amp; Circular Economy · Solid Waste Management · Hydrological Extremes · Environmental Hydraulics</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">Jul 2019 – May 2022 <span class="timeline-type">Work</span></div>
+          <div class="timeline-title">Project Engineer — Sustainable Infrastructure</div>
+          <div class="timeline-org"><a href="https://eitech.in/" target="_blank" rel="noopener" style="color:var(--teal);text-decoration:none;">E I Technologies Private Limited, India</a></div>
+          <div class="timeline-detail">ISO 9001:2015 certified multidisciplinary design and project management consultancy based in Bengaluru, working across Solar Parks, Irrigation, Drinking Water, Wastewater Treatment, and Infrastructure sectors for government and private clients across India.</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">Nov 2016 – Aug 2018 <span class="timeline-type">Work</span></div>
+          <div class="timeline-title">Engineer — Project Management</div>
+          <div class="timeline-org"><a href="https://meil.in/" target="_blank" rel="noopener" style="color:var(--teal);text-decoration:none;">Megha Engineering &amp; Infrastructures Ltd (MEIL), India</a></div>
+          <div class="timeline-detail">One of India's largest infrastructure conglomerates ($5bn, 40,000+ employees), operating across irrigation, water management, power, highways, hydrocarbons, and renewable energy across 20+ countries.</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot education"></div>
+          <div class="timeline-date">Sep 2012 – Jun 2016 <span class="timeline-type">Education</span></div>
+          <div class="timeline-title">Bachelor of Engineering — Civil Engineering</div>
+          <div class="timeline-org">Bangalore University, India</div>
+          <div class="timeline-detail">Environmental Engineering · Fluid Mechanics · Hydraulic Structures · Project Management</div>
+        </div>
+
+      </div>
+
+      <p class="certs-heading">Certificates &amp; Professional Development</p>
+      <div class="certs-grid">
+        <div class="cert-card">
+          Masterclass Cradle to Gate — LCA with SimaPro
+          <div class="cert-date">03.2026</div>
+        </div>
+        <div class="cert-card">
+          CSRD/ESRS — Position Green
+          <div class="cert-date">02.2026</div>
+        </div>
+        <div class="cert-card">
+          GRI Reporting Standards
+          <div class="cert-date">02.2026</div>
+        </div>
+        <div class="cert-card">
+          From Waste to Wealth: Plastics in a Circular Economy
+          <div class="cert-date">12.2024</div>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <!-- Card 6: Lummerwald -->
-    <div class="card">
-      <span class="card-pill">Wastewater Engineering</span>
-      <h3>Lummerwald WWTP — Static &amp; Dynamic Simulation</h3>
-      <p>SIMBA-based ASM3 simulation of a 500,000 PE WWTP. Diagnosed winter nitrification failure and optimised three configurations — achieving 13.5% annual aeration cost savings.</p>
-      <a href="lummerwald.html" class="read-more">Read More →</a>
+  <!-- ── CONTACT ── -->
+  <section id="contact">
+    <div class="container">
+      <p class="section-label">Let's Connect</p>
+      <div class="divider"></div>
+      <h2 class="section-heading">Get In Touch</h2>
+      <div class="contact-inner">
+        <div>
+          <p style="color:var(--gray-light);font-size:0.975rem;line-height:1.75;margin-bottom:1rem;">
+            I'm currently based in Hannover, Germany and open to new opportunities in LCA, sustainability, and water resources.
+          </p>
+          <div class="contact-note">
+            Open to internship and Werkstudent positions in LCA, sustainability, and water resources in Germany.
+          </div>
+        </div>
+        <div class="contact-links">
+
+          <a href="mailto:kabir.ks29@gmail.com" class="contact-item">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            </div>
+            <div>
+              <div class="contact-label">Email</div>
+              <div class="contact-value">kabir.ks29@gmail.com</div>
+            </div>
+          </a>
+
+          <a href="https://www.linkedin.com/in/kabirkundapursheik/" target="_blank" rel="noopener" class="contact-item">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </div>
+            <div>
+              <div class="contact-label">LinkedIn</div>
+              <div class="contact-value">kabirkundapursheik</div>
+            </div>
+          </a>
+
+          <a href="https://github.com/kabirks29-piw" target="_blank" rel="noopener" class="contact-item">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+            </div>
+            <div>
+              <div class="contact-label">GitHub</div>
+              <div class="contact-value">kabirks29-piw</div>
+            </div>
+          </a>
+
+          <div class="contact-item" style="cursor:default;">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            </div>
+            <div>
+              <div class="contact-label">Location</div>
+              <div class="contact-value">Hannover, Germany</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
     </div>
+  </section>
 
-    <!-- Card 7: HDPE -->
-    <div class="card">
-      <span class="card-pill">Circular Economy</span>
-      <h3>HDPE Recycling in the Circular Economy</h3>
-      <p>EU28 HDPE material flow analysis (Eurostat PRODCOM). Review of NIR sorting, hot washing, pyrolysis, and radiation crosslinking (HDPEx) recycling pathways and policy gaps.</p>
-      <a href="hdpe.html" class="read-more">Read More →</a>
-    </div>
-
-    <!-- Card 8: Guarani -->
-    <div class="card">
-      <span class="card-pill">Water Resources Management</span>
-      <h3>Guarani Aquifer System — Transboundary Management</h3>
-      <p>Academic poster analysing the PSAG governance framework for the 1M km² Guarani Aquifer across Argentina, Brazil, Paraguay, and Uruguay — from GEF grant to 2003 launch.</p>
-      <a href="guarani.html" class="read-more">Read More →</a>
-    </div>
-
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section class="about-section" id="about">
-  <h2 class="section-title">About</h2>
-  <div class="section-line"></div>
-  <div class="about-card">
-    <h2>Kabir Kundapur Sheik</h2>
-    <p>M.Sc. student in Water Resources and Environmental Management (WATENV) at Leibniz Universität Hannover. My work sits at the intersection of hydrology, environmental engineering, and circular economy — from rainfall-runoff modelling and flood forecasting to life cycle assessment, wastewater simulation, and sustainable business design.</p>
-    <p>I combine quantitative modelling skills with a systems-level perspective on resource use and environmental impact. Every project on this portfolio represents real research, real data, and real conclusions.</p>
-    <div class="skills-grid">
-      <span class="skill-tag">HBV-IWW Modelling</span>
-      <span class="skill-tag">ArcGIS Pro</span>
-      <span class="skill-tag">Python (GeoPandas, Matplotlib)</span>
-      <span class="skill-tag">SIMBA / ASM3</span>
-      <span class="skill-tag">STAN / Umberto</span>
-      <span class="skill-tag">ISO 14040/14044 LCA</span>
-      <span class="skill-tag">Flood Frequency Analysis</span>
-      <span class="skill-tag">Circular Economy Design</span>
-      <span class="skill-tag">GIS &amp; Remote Sensing</span>
-      <span class="skill-tag">Statistical Hydrology</span>
-    </div>
-  </div>
-</section>
-
-<footer>© 2026 Kabir Kundapur Sheik · Built with purpose, not a template.</footer>
+  <!-- ── FOOTER ── -->
+  <footer>
+    © 2026 <span>Kabir Kundapur Sheik</span> · Built with purpose, not a template.
+  </footer>
 
 </body>
 </html>
