@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lummerwald WWTP — Static &amp; Dynamic Simulation | Kabir Kundapur Sheik</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:#0a1628;color:#fff;font-family:'Inter',sans-serif;line-height:1.6}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,22,40,0.96);backdrop-filter:blur(10px);border-bottom:1px solid #1a3050;display:flex;align-items:center;justify-content:space-between;padding:0 2rem;height:60px}
+.nav-logo{color:#00b4a6;font-size:1.4rem;font-weight:700;text-decoration:none;letter-spacing:2px}
+.nav-back{color:#a0b8cc;text-decoration:none;font-size:0.9rem;transition:color .2s}
+.nav-back:hover{color:#00b4a6}
+main{max-width:860px;margin:0 auto;padding:100px 1.5rem 4rem}
+.hero{margin-bottom:3rem}
+.category-pill{display:inline-block;background:rgba(240,165,0,.15);color:#f0a500;border:1px solid rgba(240,165,0,.4);border-radius:20px;padding:.25rem .9rem;font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:1rem}
+.hero h1{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;line-height:1.2;margin-bottom:.75rem}
+.hero .subtitle{color:#a0b0c5;font-size:1rem;margin-bottom:2rem;line-height:1.6}
+.meta-table{width:100%;border-collapse:collapse;background:#162947;border-radius:8px;overflow:hidden}
+.meta-table tr{border-bottom:1px solid #1e3a5f}
+.meta-table tr:last-child{border-bottom:none}
+.meta-table td{padding:.6rem 1rem;font-size:.875rem}
+.meta-table td:first-child{color:#00b4a6;font-weight:600;border-left:3px solid #00b4a6;width:35%;white-space:nowrap}
+.meta-table td:last-child{color:#d0dde8}
+.section{margin-bottom:2.5rem}
+.section h2{font-size:1.3rem;font-weight:700;color:#fff;border-bottom:2px solid #00b4a6;padding-bottom:.4rem;margin-bottom:1.25rem}
+.section p{color:#c8d8e8;margin-bottom:1rem;font-size:.95rem}
+ul.project-list{list-style:none;padding:0}
+ul.project-list li{color:#c8d8e8;font-size:.95rem;padding:.35rem 0 .35rem 1.5rem;position:relative}
+ul.project-list li::before{content:'▸';color:#00b4a6;position:absolute;left:0}
+.data-table-wrap{overflow-x:auto;margin:1rem 0}
+.data-table{width:100%;border-collapse:collapse;min-width:420px}
+.data-table th{background:#162947;color:#00b4a6;font-size:.8rem;font-weight:600;padding:.6rem .8rem;text-align:left;border:1px solid #333}
+.data-table td{background:#0f2040;color:#d0dde8;font-size:.85rem;padding:.55rem .8rem;border:1px solid #333}
+.data-table tr:nth-child(even) td{background:#162947}
+.img-placeholder{background:#0f2040;border:2px dashed #00b4a6;border-radius:8px;padding:2.5rem 1rem;text-align:center;margin:1.5rem 0}
+.img-placeholder .fig-label{color:#00b4a6;font-size:.9rem;font-weight:500}
+.img-placeholder .fig-caption{color:#6080a0;font-size:.8rem;font-style:italic;margin-top:.5rem}
+footer{text-align:center;color:#4a6080;font-size:.8rem;padding:2rem 1rem;border-top:1px solid #1a3050;margin-top:2rem}
+@media(max-width:600px){nav{padding:0 1rem}main{padding:80px 1rem 3rem}.meta-table td:first-child{width:42%;white-space:normal}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">KKS</a>
+  <a href="index.html" class="nav-back">← Back to Portfolio</a>
+</nav>
+<main>
+  <div class="hero">
+    <div class="category-pill">Wastewater Engineering</div>
+    <h1>Lummerwald WWTP — Static &amp; Dynamic Simulation</h1>
+    <p class="subtitle">Static and Dynamic Simulation of a Biological Wastewater Treatment Plant: Process Optimisation and Aeration Cost Analysis Using SIMBA</p>
+    <table class="meta-table">
+      <tr><td>Course / Module</td><td>Modelling in Sanitary Engineering — Project Assignment</td></tr>
+      <tr><td>Institution</td><td>Institut für Siedlungswasserwirtschaft und Abfalltechnik (ISAH), Leibniz Universität Hannover</td></tr>
+      <tr><td>Period</td><td>2022/2023 Academic Year</td></tr>
+      <tr><td>Supervisors</td><td>Prof. Dr.-Ing. Regina Nogueira; Beatriz Dörrié, M.Sc.; Varian Arif</td></tr>
+      <tr><td>Team Members</td><td>Kabir Kundapur Sheik (10050735)</td></tr>
+      <tr><td>Software</td><td>SIMBA (ASM3-based activated sludge model)</td></tr>
+      <tr><td>Study Object</td><td>Lummerwald WWTP — 500,000 Population Equivalent</td></tr>
+      <tr><td>Key Parameter</td><td>Aeration cost optimisation across seasonal temperatures (8°C / 15°C / 20°C)</td></tr>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>Overview</h2>
+    <p>This project applies static and dynamic simulation techniques using SIMBA software to optimise the biological wastewater treatment process at the Lummerwald WWTP, a facility serving a population equivalent (PE) of 500,000 inhabitants. The plant treats a daily wastewater inflow of 60,000 m³/day (120 L/IV/d) with influent characteristics of COD = 650 mg/L, KN = 65 mg/L, and P = 10 mg/L.</p>
+    <p>Treated effluent must comply with strict limit values of COD ≤ 75 mg/L, N<sub>tot</sub> ≤ 13 mg/L, and S<sub>NH</sub> ≤ 10 mg/L year-round. The central engineering challenge is that the existing plant configuration fails to meet effluent standards during winter operation at 8°C — specifically, nitrification and denitrification processes break down due to critically low autotrophic biomass (X<sub>A</sub> = 5 g COD/m³ at 8°C versus 50 g COD/m³ at 15°C).</p>
+    <p>The study evaluates three configurations: the existing process (baseline diagnosis), Alternative 1 (sludge recycle modification), and Alternative 2 (step-feed cascade with/without relay-and-switch aeration control), all simulated at three seasonal temperatures.</p>
+    <div class="img-placeholder">
+      <div class="fig-label">Figure 1 — Lummerwald WWTP: Existing Plant Flow Sheet</div>
+      <div class="fig-caption">Activated sludge tank, secondary clarifiers, return sludge, and band filter layout</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Methodology</h2>
+    <p><strong style="color:#fff">Existing Process Diagnosis:</strong> SIMBA CSTR analysis at 8°C revealed the root cause of winter failure: autotrophic biomass (X<sub>A</sub>) collapses from ~50 g COD/m³ at 15°C to just 5 g COD/m³ at 8°C. With almost no X<sub>A</sub> present, effluent S<sub>NH</sub> at 8°C reaches 33 mg/L against a limit of 10 mg/L. The existing band filter at 2,500 m³/day is removing too much sludge, preventing biomass accumulation.</p>
+
+    <div class="data-table-wrap">
+      <table class="data-table">
+        <thead>
+          <tr><th>Parameter</th><th>8°C (FAILING)</th><th>15°C (OK)</th><th>20°C (OK)</th><th>Limit</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>COD (mg/L)</td><td>40</td><td>38</td><td>38</td><td>≤ 75</td></tr>
+          <tr><td>N<sub>tot</sub> (mg/L)</td><td>34 ❌</td><td>10</td><td>10</td><td>≤ 13</td></tr>
+          <tr><td>S<sub>NH</sub> (mg/L)</td><td>33 ❌</td><td>10.2</td><td>—</td><td>≤ 10</td></tr>
+          <tr><td>X<sub>A</sub> in aerobic zone</td><td>5</td><td>50</td><td>42</td><td>—</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p><strong style="color:#fff">Alternative 1 — Modified Existing:</strong> Reducing excess sludge withdrawal from 2,500 m³/day to 1,500 m³/day. X<sub>A</sub> in the aerobic zone recovers from 5 to 86 g COD/m³ at 8°C, achieving full compliance at all temperatures. Sludge treatment cost drops ~40%.</p>
+
+    <div class="img-placeholder">
+      <div class="fig-label">Figure 2 — Alternative 1: CSTR Analysis at 8°C</div>
+      <div class="fig-caption">Restored nitrification/denitrification after sludge withdrawal reduction to 1,500 m³/day</div>
+    </div>
+
+    <p><strong style="color:#fff">Alternative 2a — Step Feed Configuration:</strong> Splits activated sludge volume into three equal anoxic/aerobic stage pairs with influent introduced at three points. Creates multiple denitrification opportunities, reducing N<sub>tot</sub> by a further 1–2 mg/L vs. Alternative 1 at all temperatures.</p>
+
+    <p><strong style="color:#fff">Alternative 2b — Step Feed + Relay &amp; Switch Control:</strong> A relay-and-switch control block added to the first nitrification tank's aeration, triggered by effluent S<sub>NO</sub> concentration (switch-on at S<sub>NO</sub> = 4.5 mg/L). Automatically reduces aeration when adequate biological activity is occurring, eliminating constant over-aeration at 15°C and 20°C.</p>
+
+    <div class="img-placeholder">
+      <div class="fig-label">Figure 3 — Alternative 2b: Step Feed with Relay &amp; Switch Control</div>
+      <div class="fig-caption">SIMBA model with SNO-triggered aeration control block; dynamic effluent quality plots at 8°C, 15°C, 20°C</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Key Findings</h2>
+
+    <div class="data-table-wrap">
+      <table class="data-table">
+        <thead>
+          <tr><th>Configuration</th><th>Alt-1 Modified (€/yr)</th><th>Alt-2a Step Feed (€/yr)</th><th>Alt-2b + Relay/Switch (€/yr)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>8°C (winter)</td><td>144,282</td><td>137,162</td><td>121,422</td></tr>
+          <tr><td>15°C (spring/autumn)</td><td>335,784</td><td>320,045</td><td>290,813</td></tr>
+          <tr><td>20°C (summer)</td><td>179,884</td><td>171,265</td><td>158,523</td></tr>
+          <tr><td><strong>TOTAL annual cost</strong></td><td><strong>659,952</strong></td><td><strong>628,472</strong></td><td><strong>570,759</strong></td></tr>
+          <tr><td>Saving vs. Alt-1</td><td>Baseline</td><td>−5% (−€31,480)</td><td>−13.5% (−€89,193)</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <ul class="project-list">
+      <li>Root cause of winter failure is a control parameter issue, not a design flaw: excess sludge withdrawal at 2,500 m³/day prevents sufficient autotrophic biomass accumulation for nitrification at 8°C.</li>
+      <li>Reducing withdrawal to 1,500 m³/day restores compliance with zero physical plant changes, reducing sludge treatment costs by ~40%.</li>
+      <li>Step-feed (Alt-2a) provides superior nitrogen removal — N<sub>tot</sub> from 10–11 to 7–10 mg/L — at the cost of higher capital investment for additional anoxic tanks.</li>
+      <li>Alternative 2b (Step Feed + Relay/Switch) is the optimal solution: 13.5% aeration cost reduction (saving €89,193/year) with maintained effluent quality.</li>
+      <li>Dynamic simulation confirms all three alternatives maintain effluent compliance under variable inflow conditions.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Conclusion</h2>
+    <p>This project demonstrates the power of SIMBA-based static and dynamic simulation in diagnosing and resolving a real-world WWTP performance failure. The relay-and-switch aeration control (Alternative 2b) is the optimal solution overall: it achieves the same nitrogen removal performance as step-feed while cutting annual aeration costs by 13.5% by automatically reducing aeration when effluent S<sub>NO</sub> confirms adequate biological activity.</p>
+    <p>Further performance improvements recommended include anaerobic digestion of excess sludge to generate biogas revenue, optimising sludge recycle pipeline diameters, and regular pump maintenance to sustain the 1,500 m³/day control set point. The SIMBA model's ASM3 limitation (no phosphorus removal module) means P removal would require additional investigation.</p>
+  </div>
+</main>
+<footer>© 2026 Kabir Kundapur Sheik · Built with purpose, not a template.</footer>
+</body>
+</html>

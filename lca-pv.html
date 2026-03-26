@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LCA Framework for Photovoltaic Systems | Kabir Kundapur Sheik</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:#0a1628;color:#fff;font-family:'Inter',sans-serif;line-height:1.6}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,22,40,0.96);backdrop-filter:blur(10px);border-bottom:1px solid #1a3050;display:flex;align-items:center;justify-content:space-between;padding:0 2rem;height:60px}
+.nav-logo{color:#00b4a6;font-size:1.4rem;font-weight:700;text-decoration:none;letter-spacing:2px}
+.nav-back{color:#a0b8cc;text-decoration:none;font-size:0.9rem;transition:color .2s}
+.nav-back:hover{color:#00b4a6}
+main{max-width:860px;margin:0 auto;padding:100px 1.5rem 4rem}
+.hero{margin-bottom:3rem}
+.category-pill{display:inline-block;background:rgba(240,165,0,.15);color:#f0a500;border:1px solid rgba(240,165,0,.4);border-radius:20px;padding:.25rem .9rem;font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:1rem}
+.hero h1{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;line-height:1.2;margin-bottom:.75rem}
+.hero .subtitle{color:#a0b0c5;font-size:1rem;margin-bottom:2rem;line-height:1.6}
+.meta-table{width:100%;border-collapse:collapse;background:#162947;border-radius:8px;overflow:hidden}
+.meta-table tr{border-bottom:1px solid #1e3a5f}
+.meta-table tr:last-child{border-bottom:none}
+.meta-table td{padding:.6rem 1rem;font-size:.875rem}
+.meta-table td:first-child{color:#00b4a6;font-weight:600;border-left:3px solid #00b4a6;width:35%;white-space:nowrap}
+.meta-table td:last-child{color:#d0dde8}
+.section{margin-bottom:2.5rem}
+.section h2{font-size:1.3rem;font-weight:700;color:#fff;border-bottom:2px solid #00b4a6;padding-bottom:.4rem;margin-bottom:1.25rem}
+.section p{color:#c8d8e8;margin-bottom:1rem;font-size:.95rem}
+ul.project-list{list-style:none;padding:0}
+ul.project-list li{color:#c8d8e8;font-size:.95rem;padding:.35rem 0 .35rem 1.5rem;position:relative}
+ul.project-list li::before{content:'▸';color:#00b4a6;position:absolute;left:0}
+.data-table-wrap{overflow-x:auto;margin:1rem 0}
+.data-table{width:100%;border-collapse:collapse;min-width:380px}
+.data-table th{background:#162947;color:#00b4a6;font-size:.8rem;font-weight:600;padding:.6rem .8rem;text-align:left;border:1px solid #333}
+.data-table td{background:#0f2040;color:#d0dde8;font-size:.85rem;padding:.55rem .8rem;border:1px solid #333}
+.data-table tr:nth-child(even) td{background:#162947}
+.img-placeholder{background:#0f2040;border:2px dashed #00b4a6;border-radius:8px;padding:2.5rem 1rem;text-align:center;margin:1.5rem 0}
+.img-placeholder .fig-label{color:#00b4a6;font-size:.9rem;font-weight:500}
+.img-placeholder .fig-caption{color:#6080a0;font-size:.8rem;font-style:italic;margin-top:.5rem}
+footer{text-align:center;color:#4a6080;font-size:.8rem;padding:2rem 1rem;border-top:1px solid #1a3050;margin-top:2rem}
+@media(max-width:600px){nav{padding:0 1rem}main{padding:80px 1rem 3rem}.meta-table td:first-child{width:42%;white-space:normal}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">KKS</a>
+  <a href="index.html" class="nav-back">← Back to Portfolio</a>
+</nav>
+<main>
+  <div class="hero">
+    <div class="category-pill">LCA &amp; Sustainability</div>
+    <h1>LCA Framework for Photovoltaic Systems</h1>
+    <p class="subtitle">Developing a qualitative framework to facilitate the execution of Life Cycle Assessments for PV Systems</p>
+    <table class="meta-table">
+      <tr><td>Institution</td><td>Leibniz Universität Hannover — Institute for Sanitary Engineering and Waste Management</td></tr>
+      <tr><td>Programme</td><td>M.Sc. Water Resources and Environmental Management (WATENV)</td></tr>
+      <tr><td>Submitted</td><td>15th October 2024</td></tr>
+      <tr><td>Supervisors</td><td>Prof. Dr.-Ing. Habil. Dirk Weichgrebe | M.Sc. Sara Zahedi Nezhad</td></tr>
+      <tr><td>Tools Used</td><td>STAN2, Umberto, ISO 14040/14044, SimaPro, Literature Review</td></tr>
+      <tr><td>Collaborators</td><td>Kabir Kundapur Sheik, Shivam Aks, Rabeia Malik, Moiz Rao</td></tr>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>Overview</h2>
+    <p>This research project, conducted at the Institute for Sanitary Engineering and Waste Management, Leibniz Universität Hannover, developed a qualitative framework to structure and simplify Life Cycle Assessments (LCA) for Photovoltaic (PV) systems. PV technology is expanding rapidly as a fossil fuel alternative, yet its full environmental impact — from raw material extraction through manufacturing, installation, and end-of-life disposal — remains incompletely understood.</p>
+    <p>The project followed all four phases of the ISO 14040/14044 LCA standard: Goal and Scope Definition, Life Cycle Inventory Analysis, Life Cycle Impact Assessment, and Life Cycle Interpretation, with a functional unit of 1 kWh of electricity generated.</p>
+    <p>Material flows were modelled using two complementary tools: STAN2 for detailed material-specific flow analysis tracking goods, aluminium, and silicon across all lifecycle stages; and Umberto for integrated LCA modelling with direct carbon footprint estimation. The study reviewed 10+ existing LCA studies and compared crystalline silicon versus thin-film PV technologies across material utilisation, energy consumption, and emissions.</p>
+    <div class="img-placeholder">
+      <div class="fig-label">Figure 1 — Four Stages of LCA (ISO 14044)</div>
+      <div class="fig-caption">Goal &amp; Scope → Inventory Analysis → Impact Assessment → Interpretation</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Key Findings</h2>
+    <ul class="project-list">
+      <li>Only 25 out of 117 reviewed LCA studies covered the full lifecycle — 92 focused solely on production, revealing a major gap this framework addresses.</li>
+      <li>Raw material refining dominates energy demand at 486,730,021,000 kWh — approximately 97% of total process energy, making it the primary target for efficiency improvement.</li>
+      <li>GHG emissions range from 22–27 g CO₂-eq/kWh (polycrystalline silicon) to 34.3 g CO₂-eq/kWh (amorphous silicon).</li>
+      <li>Installation and usage phases are the dominant GWP contributors across the full lifecycle.</li>
+      <li>Umberto outperforms STAN2 for integrated LCA work; STAN2 is better for granular material-specific analysis.</li>
+    </ul>
+
+    <div class="data-table-wrap">
+      <table class="data-table">
+        <thead>
+          <tr><th>Process</th><th>Energy Demand (kWh)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Raw Material Refining</td><td>486,730,021,000</td></tr>
+          <tr><td>Assembly</td><td>11,265,500,000</td></tr>
+          <tr><td>Recycling Centre</td><td>6,034,889,872</td></tr>
+          <tr><td>Manufacturing</td><td>2,075,574,189</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="img-placeholder">
+      <div class="fig-label">Figure 2 — Umberto Circular Model</div>
+      <div class="fig-caption">Full PV lifecycle material flow modelled in Umberto</div>
+    </div>
+    <div class="img-placeholder">
+      <div class="fig-label">Figure 3 — GWP Results</div>
+      <div class="fig-caption">Global Warming Potential chart across lifecycle phases</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Conclusion</h2>
+    <p>This project successfully developed a qualitative LCA framework addressing a documented gap — most existing studies neglect end-of-life impacts entirely. Circular economy strategies (repair, reuse, recycling) have significant potential to reduce PV environmental footprints. Standardised methodologies (ISO 14040/14044, PEF Guide) are essential for consistent cross-technology assessment.</p>
+    <p>The framework directly supports the renewable energy sector's transition toward a circular economy model and is relevant to SDGs 7, 9, 12, and 13.</p>
+  </div>
+</main>
+<footer>© 2026 Kabir Kundapur Sheik · Built with purpose, not a template.</footer>
+</body>
+</html>
